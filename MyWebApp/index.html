@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>My WebSite</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="title">Movie Ratings</h1>
+    <div ng-controller="myCtrl" ng-repeat="item in items">
+        {{item.movie}}
+    </div>
+
+    <form action="/" method="post"></form>
+    <script src="Scripts/angular.min.js"></script>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myCtrl", function () {
+            this.items = [
+                { movie: "Suicide Squad", rating: "6.7" },
+                { movie: "Batman V Superman", rating: "6.8" },
+                { movie: "Iron Man", rating: "7.9" }
+            ]
+        });
+    </script>
+
+</body>
+</html>
